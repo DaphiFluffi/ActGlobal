@@ -1,15 +1,24 @@
 package actGlobal;
 
+import java.util.ArrayList;
+
 public class Aktion {
 
 	public String name;
 	public double spenden;
 	public double spendenziel;
 
-	public Aktion (String name, double spenden, double spendenziel) {
+	//Hier muss eine Beziehung zw. Aktion und Organisator,Konto sowie Spende machen
+	private Organisator organisator; // Muss genau ein Organisator haben
+	private Konto konto; // Muss genau eine Konto haben
+	private ArrayList<Spende> spendenListe = new ArrayList<Spende>(); // Muss ein ArrayList von Spende haben, weil eine Aktion kann 0 oder mehrere Spende haben
+	
+	public Aktion (String name, double spenden, double spendenziel, Organisator organisator, Konto konto) {
 		this.name = name;
 		this.spenden = spenden;
 		this.spendenziel = spendenziel;
+		this.organisator = organisator;
+		this.konto = konto;
 	}
 
 	public String getName() {
@@ -34,5 +43,29 @@ public class Aktion {
 
 	public void setSpendenziel(double spendenziel) {
 		this.spendenziel = spendenziel;
+	}
+	
+	public Organisator getOrganisator() {
+		return organisator;
+	}
+
+	public void setOrganisator(Organisator organisator) {
+		this.organisator = organisator;
+	}
+
+	public Konto getKonto() {
+		return konto;
+	}
+
+	public void setKonto(Konto konto) {
+		this.konto = konto;
+	}
+
+	public ArrayList<Spende> getSpendenListe() {
+		return spendenListe;
+	}
+
+	public void setSpendenListe(ArrayList<Spende> spendenListe) {
+		this.spendenListe = spendenListe;
 	}
 }

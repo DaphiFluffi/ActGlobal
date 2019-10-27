@@ -7,11 +7,17 @@ public class Konto {
 	private String name;
 	private String bank;
 	
-	public Konto (String blz, String kontoNr, String name, String bank) {
+	//Hier muss eine Beziehung zw. Konto und Aktion sowie Spende machen
+	private Aktion aktion; //wird hier genau eine Aktion aufgerufen.
+	private Spende spende; //wird hier genau eine Spende aufgerufen
+	
+	public Konto (String blz, String kontoNr, String name, String bank, Aktion aktion, Spende spende) {
 		this.blz = blz;
 		this.kontoNr = kontoNr;
-		this.name=name;
-		this.bank=bank;
+		this.name = name;
+		this.bank = bank;
+		this.aktion = aktion;
+		this.spende = spende;
 	}
 	
 	public String getBLZ() {
@@ -30,6 +36,14 @@ public class Konto {
 		return bank;
 	}
 	
+	public Aktion getAktion() {
+		return aktion;
+	}
+	
+	public Spende getSpende() {
+		return spende;
+	}
+	
 	public void setBLZ(String blz) {
 		this.blz = blz;
 	}
@@ -46,4 +60,11 @@ public class Konto {
 		this.bank = bank;
 	}
 	
+	public void getAktion(Aktion aktion) {
+		this.aktion = aktion;
+	}
+	
+	public void getSpende(Spende spende) {
+		this.spende = spende;
+	}
 }
