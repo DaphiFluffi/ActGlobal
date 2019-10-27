@@ -7,9 +7,10 @@ public class Konto {
 	private String name;
 	private String bank;
 	
-	//Hier muss eine Beziehung zw. Konto und Aktion sowie Spende machen
-	private Aktion aktion; //wird hier genau eine Aktion aufgerufen.
-	private Spende spende; //wird hier genau eine Spende aufgerufen
+	//Eine Beziehung zw. Konto und Aktion sowie Spende wurde gemacht, da laut UML Diagramme muss eine Konto mit genau einer Aktion und genau einer Spende verknupfen.
+	//Hat die Klasse Konto aufgerufen wird, muss unbedingt Aktion und Spende auch instanziiren sonst wird Fehlermeldung auftaucht.
+	private Aktion aktion;
+	private Spende spende;
 	
 	public Konto (String blz, String kontoNr, String name, String bank, Aktion aktion, Spende spende) {
 		this.blz = blz;
@@ -18,6 +19,17 @@ public class Konto {
 		this.bank = bank;
 		this.aktion = aktion;
 		this.spende = spende;
+		
+		//Wenn Aktion und oder Spende Objekte als null eingegeben wuerden, dann taucht Fehlermeldung auf
+		if(aktion == null){
+			System.out.println("Die Angabe der Aktion fehlt. Bitte nochmal versuchen");
+			System.exit(0);
+		}
+		
+		if(spende == null){
+			System.out.println("Die Angabe der Spende fehlt. Bitte nochmal versuchen");
+			System.exit(0);
+		}
 	}
 	
 	public String getBLZ() {
