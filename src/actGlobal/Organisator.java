@@ -4,29 +4,28 @@ import java.util.ArrayList;
 
 public class Organisator {
 	
-	//Hier werden die Eingabeforderungen im String gespeichert
+	//Hier werden die Eingaben im String gespeichert
 	private String email;  
 	private String nachname;
 	private String vorname;
 	private String passwort;
 	
-	// mithilfe der folgendenen Zuweisung 
+	// mithilfe der folgendenen Zuweisung kann ein Organisator laut UML-Diagramm eine oder mehrere Aktionen haben
+	
 	private ArrayList<Aktion> aktionsListe = new ArrayList<Aktion>();
 	
-	
+	// der Organisatior muss aber keine Aktion auswführen, daher ist die ArrayList aktionsListe nicht im Konstruktor Public enthalten
 	public Organisator(String email, String nachname, String vorname, String passwort) { 
 		
 		// parametrisierter Konstruktor
-		this.setEmail(email);
-		this.setNachname(nachname);
-		this.setVorname(vorname);
-		this.setPasswort(passwort);
+		this.email = email;
+		this.nachname = nachname;
+		this.vorname = vorname;
+		this.passwort = passwort;
 
 	}
 	
 	// Getter&Setter fuer die privatisierten Attribute
-	
-	
 	
 	public ArrayList<Aktion> getAktionsListe() {
 		return aktionsListe;
