@@ -13,12 +13,25 @@ public class Aktion {
 	private Konto konto; // Muss genau eine Konto haben
 	private ArrayList<Spende> spendenListe = new ArrayList<Spende>(); // Muss ein ArrayList von Spende haben, weil eine Aktion kann 0 oder mehrere Spende haben
 	
+	//da genau ein Konto, eine Spende und genau eine Organisator pro Aktion existieren muss, werden die Klassenvariablen in den Konstruktor als Parameter uebergeben
+	//so kann kein Objekt der Klasse Aktion instanziiert werden, ohne ein Konto, eine Organisator und eine Spende angegeben zu haben 
 	public Aktion (String name, double spenden, double spendenziel, Organisator organisator, Konto konto) {
 		this.name = name;
 		this.spenden = spenden;
 		this.spendenziel = spendenziel;
 		this.organisator = organisator;
 		this.konto = konto;
+		
+		// Wenn statt eines richtigen Konto- oder Aktion-Objektes null �bergeben wurde, soll diese Fehlermeldung erscheinen
+		if(organisator == null){
+			System.out.println("Die Angabe der Organisator fehlt. Bitte nochmal versuchen");
+			System.exit(0);
+		}
+		
+		if(konto == null){
+			System.out.println("Die Angabe der Konto fehlt. Bitte nochmal versuchen");
+			System.exit(0);
+		}
 	}
 
 	public String getName() {
