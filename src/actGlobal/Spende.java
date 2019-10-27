@@ -5,13 +5,13 @@ public class Spende {
 	private double betrag;
 	private boolean quittung;
 	private String spendername;
-	private Status s;
+	private Status status;
 
 	public Spende(double betrag, boolean quittung, String spendername, Status s) {
 		this.betrag = betrag;
 		this.quittung = quittung;
 		this.spendername = spendername;
-		s = Status.IN_BEARBEITUNG; //vielleicht dafür auch noch einen Getter Setter?
+		status = Status.IN_BEARBEITUNG; //vielleicht dafür auch noch einen Getter Setter?
 	}
 
 
