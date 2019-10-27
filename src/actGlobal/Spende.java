@@ -9,7 +9,7 @@ public class Spende {
 	private Status status;
 	private Aktion aktion;
 	private Konto konto;
-	sdgfhjkljhgfdsfghjkl
+
 	
 	//parametrisierter Konstruktor 
 	public Spende(double betrag, boolean quittung, String spendername, Status status, Konto konto, Aktion aktion) {
