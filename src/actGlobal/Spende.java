@@ -20,7 +20,7 @@ public class Spende {
 		this.betrag = betrag;
 		this.quittung = quittung;
 		this.spendername = spendername;
-		this.status = Status.IN_BEARBEITUNG; //als default wert?
+		this.status = Status.IN_BEARBEITUNG; 
 		
 		// Wenn statt eines richtigen Konto- oder Aktion-Objektes null übergeben wurde, soll diese Fehlermeldung erscheinen
 		if(konto == null ) {
@@ -85,6 +85,5 @@ public class Spende {
 	public void setKonto(Konto konto) {
 		this.konto = konto;
 	}
-	
-	//readonly? keine setter methode für Status
+	//fuer Status keine setter Methode, da im UML Diagramm als readonly gekennzeichnet
 }
